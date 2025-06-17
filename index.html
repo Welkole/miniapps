@@ -69,17 +69,19 @@
   </div>
 
   <script>
-    function openLink(url) {
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+
+  function openLink(url) {
     Telegram.WebApp.openLink(url);
   }
 
-  function openBotCommand() {
+  function openBotCommand(command) {
     Telegram.WebApp.close();
-    window.location.href = 'https://t.me/welkolecreator_bot?start=list3bot';
+    setTimeout(() => {
+      window.location.href = `tg://resolve?domain=welkolecreator_bot&start=${command}`;
+    }, 300);
   }
-
-  Telegram.WebApp.ready();
-  Telegram.WebApp.expand();
   </script>
 </body>
 </html>
