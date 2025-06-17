@@ -78,18 +78,14 @@
   }
 
   function openBotCommand(command) {
-    if (window.Telegram && Telegram.WebApp) {
         Telegram.WebApp.close();
-      }
     setTimeout(() => {
       window.location.href = `tg://resolve?domain=welkolecreator_bot&start=${command}`;
     }, 500);
   }
 
   function goToTelegram(url) {
-      if (window.Telegram && Telegram.WebApp) {
         Telegram.WebApp.close();
-      }
       setTimeout(() => {
         window.location.href = url;
       }, 500);
